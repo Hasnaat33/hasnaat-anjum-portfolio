@@ -1,3 +1,6 @@
 - [x] Replace contact buttons with verified email and WhatsApp links.
 - [x] Update the contact form to open an email draft to the verified address.
 - [x] Validate the production build and save the revised checkpoint.
+- [x] Add a floating WhatsApp chat launcher using the verified mobile number.
+- [x] Refine small-screen hierarchy, spacing, and tap targets across the portfolio.
+- [x] Verify mobile rendering and save the updated checkpoint.

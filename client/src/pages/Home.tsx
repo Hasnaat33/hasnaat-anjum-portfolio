@@ -499,6 +499,17 @@ export default function Home() {
         <p>AI agents, automation, commerce &amp; growth systems.</p>
         <button onClick={() => scrollToId("top")} aria-label="Back to top">Back to top <ArrowUpRight size={15} /></button>
       </footer>
+      <a
+        className="floating-whatsapp"
+        href={`${whatsappUrl}?text=${encodeURIComponent("Hi Hasnaat, I’d like to discuss a project.")}`}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Chat with Hasnaat on WhatsApp"
+      >
+        <span className="floating-whatsapp__signal" aria-hidden="true" />
+        <span className="floating-whatsapp__icon"><MessageCircle size={22} fill="currentColor" strokeWidth={1.75} /></span>
+        <span className="floating-whatsapp__copy"><small>Quick question?</small>Chat on WhatsApp</span>
+      </a>
     </div>
   );
 }
