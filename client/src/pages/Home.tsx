@@ -41,6 +41,8 @@ const heroNetwork = "/manus-storage/hasnaat-hero-network_ec91b4e0.jpg";
 const agentLab = "/manus-storage/hasnaat-agent-lab_c7350836.jpg";
 const commerceStudio = "/manus-storage/hasnaat-commerce-studio_0e2053a3.jpg";
 const gridTexture = "/manus-storage/hasnaat-grid-texture_6907eec2.jpg";
+const contactEmail = "hasnaatanjum771@gmail.com";
+const whatsappUrl = "https://wa.me/923143621992";
 
 const skills = [
   {
@@ -294,9 +296,14 @@ export default function Home() {
 
   function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    toast.success("Thanks — your enquiry is ready to review.", {
-      description: "Add verified contact details to route messages directly to an inbox.",
-    });
+    const formData = new FormData(event.currentTarget);
+    const name = String(formData.get("name") || "");
+    const email = String(formData.get("email") || "");
+    const message = String(formData.get("message") || "");
+    const subject = `Portfolio enquiry from ${name || "a new contact"}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\nProject brief:\n${message}`;
+    window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    toast.success("Opening your email draft.", { description: `Your enquiry is addressed to ${contactEmail}.` });
     event.currentTarget.reset();
   }
 
@@ -471,8 +478,8 @@ export default function Home() {
             <h2>Have a useful problem?<br /><em>Let&apos;s give it a system.</em></h2>
             <p>Share the outcome you are working toward. I&apos;ll bring the right blend of AI, automation, commerce, and growth thinking to the conversation.</p>
             <div className="contact-channel-list">
-              <button onClick={() => directChannel("Email")}><Mail size={18} /><span><small>Prefer a written brief?</small>Email</span><ArrowUpRight size={17} /></button>
-              <button onClick={() => directChannel("WhatsApp")}><MessageCircle size={18} /><span><small>Want a quick working chat?</small>WhatsApp</span><ArrowUpRight size={17} /></button>
+              <a href={`mailto:${contactEmail}`}><Mail size={18} /><span><small>{contactEmail}</small>Email</span><ArrowUpRight size={17} /></a>
+              <a href={whatsappUrl} target="_blank" rel="noreferrer"><MessageCircle size={18} /><span><small>+92 314 362 1992</small>WhatsApp</span><ArrowUpRight size={17} /></a>
               <button onClick={() => directChannel("LinkedIn")}><Linkedin size={18} /><span><small>Connect professionally</small>LinkedIn</span><ArrowUpRight size={17} /></button>
             </div>
           </div>

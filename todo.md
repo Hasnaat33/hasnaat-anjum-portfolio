@@ -1,0 +1,3 @@
+- [x] Replace contact buttons with verified email and WhatsApp links.
+- [x] Update the contact form to open an email draft to the verified address.
+- [x] Validate the production build and save the revised checkpoint.
